@@ -28,12 +28,12 @@ class App extends Component {
             </Menu.Item>
 
             <Menu.Item
-              name="articles"
-              active={activeItem === 'articles'}
+              name="fortune"
+              active={activeItem === 'fortune'}
               onClick={this.handleItemClick}
-              href="/articles"
+              href="/fortune"
             >
-              Articles
+              Fortune Today
             </Menu.Item>
 
             <Menu.Item

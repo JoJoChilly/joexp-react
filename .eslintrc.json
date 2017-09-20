@@ -11,6 +11,7 @@
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
-        "comma-dangle": ["error", "only-multiline"]
+        "comma-dangle": ["error", "only-multiline"],
+        "no-mixed-operators": [1, {"allowSamePrecedence": true }]
     }
 }

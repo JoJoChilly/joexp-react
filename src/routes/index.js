@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import Frame from '../layouts/Frame';
 import Home from '../views/Home';
 import About from '../views/About';
+import Fortune from '../views/Fortune';
 
 const routes = [
   { path: '/home ',
@@ -11,6 +12,10 @@ const routes = [
   },
   { path: '/about',
     component: About
+  },
+  {
+    path: '/fortune',
+    component: Fortune
   }
 ];
 
