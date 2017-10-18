@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 export default class Nav extends Component {
-  render() {
-    return (
-      <div>Nav</div>
-    );
-  }
+    render() {
+        return <div>Nav</div>;
+    }
 }
