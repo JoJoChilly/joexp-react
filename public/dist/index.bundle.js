@@ -65993,14 +65993,67 @@ var Home = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                {
-                    __source: {
+                { style: { paddingTop: '30px' }, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 5
+                        lineNumber: 6
                     },
                     __self: this
                 },
-                'Home'
+                _react2.default.createElement(
+                    'h2',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 7
+                        },
+                        __self: this
+                    },
+                    'Yes, finally I made it.'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 8
+                        },
+                        __self: this
+                    },
+                    '\u505A\u4E00\u4E2A\u7F51\u7AD9\u5E76\u4E0D\u90A3\u4E48\u7B80\u5355\uFF0C\u5C24\u5176\u662F\u5BF9\u4E8E\u62D6\u5EF6\u75C7\u665A\u671F\u60A3\u8005\u6765\u8BF4\u3002'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 9
+                        },
+                        __self: this
+                    },
+                    '\u5343\u8F9B\u4E07\u82E6\uFF0C\u7EC8\u4E8E\u5EFA\u6210\u96CF\u5F62\uFF0C\u53EF\u4EE5\u6162\u6162\u8FED\u4EE3\u4E86\u3002'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 10
+                        },
+                        __self: this
+                    },
+                    '\u7B2C\u4E00\u6B65\uFF0C\u51C6\u5907\u642D\u4E00\u4E2A\u535A\u5BA2\u3002'
+                ),
+                _react2.default.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 11
+                        },
+                        __self: this
+                    },
+                    'See Ya.'
+                )
             );
         }
     }]);
