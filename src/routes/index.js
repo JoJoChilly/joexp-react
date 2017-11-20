@@ -5,20 +5,25 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from '../views/Home';
 import About from '../views/About';
 import Fortune from '../views/Fortune';
+import MarkDown from '../views/MarkDown';
 
 const routes = [
     {
         path: '/home ',
-        component: Home
+        component: Home,
     },
     {
         path: '/about',
-        component: About
+        component: About,
     },
     {
         path: '/fortune',
-        component: Fortune
-    }
+        component: Fortune,
+    },
+    {
+        path: '/markdown',
+        component: MarkDown,
+    },
 ];
 
 // wrap <Route> and use this everywhere instead, then when

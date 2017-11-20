@@ -6,6 +6,8 @@ import RouteConfig from './routes';
 import Tick from './components/Tick';
 import './App.css';
 
+const Item = Menu.Item;
+
 class App extends Component {
     state = {};
 
@@ -17,42 +19,43 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <Menu>
-                        <Menu.Item
+                        <Item
                             name="home"
                             active={activeItem === 'home'}
                             onClick={this.handleItemClick}
                             href="/"
                         >
                             Home
-                        </Menu.Item>
+                        </Item>
 
-                        <Menu.Item
+                        <Item
                             name="fortune"
                             active={activeItem === 'fortune'}
                             onClick={this.handleItemClick}
                             href="/fortune"
                         >
                             Fortune Today
-                        </Menu.Item>
+                        </Item>
 
-                        <Menu.Item
+                        <Item
                             name="about"
                             active={activeItem === 'about'}
                             onClick={this.handleItemClick}
                             href="/about"
                         >
                             About
-                        </Menu.Item>
+                        </Item>
+
+                        <Item
+                            name="markdown"
+                            active={activeItem === 'markdown'}
+                            onClick={this.handleItemClick}
+                            href="/markdown"
+                        >
+                            MarkDown转换器
+                        </Item>
                         <Tick />
                     </Menu>
-                    <div className="App-header">
-                        <img
-                            src="images/logo.svg"
-                            className="App-logo"
-                            alt="logo"
-                        />
-                        <h2>Welcome to JoExp</h2>
-                    </div>
                     <RouteConfig />
                 </div>
             </Router>
