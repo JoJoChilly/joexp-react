@@ -5,9 +5,10 @@
   "scripts": {
     "start": "pm2 start ./bin/www",
     "restart": "pm2 restart ./bin/www",
-    "build": "./node_modules/.bin/webpack --config scripts/dev.js --progress",
-    "redev": "./node_modules/.bin/webpack --config scripts/dev.js --progress -w",
-    "dev": "pm2 start ./bin/www & ./node_modules/.bin/webpack --config scripts/dev.js --progress -w"
+    "build-prev-dev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress",
+    "build": "./node_modules/.bin/webpack --config scripts/webpack.prod.js --progress",
+    "redev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
+    "dev": "pm2 start ./bin/www & ./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w"
   },
   "dependencies": {
     "autoprefixer": "7.1.2",
@@ -67,10 +68,12 @@
     "showdown": "^1.8.2",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
+    "uglifyjs-webpack-plugin": "^1.1.0",
     "url-loader": "0.5.9",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-manifest-plugin": "1.2.1",
+    "webpack-merge": "^4.1.1",
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {

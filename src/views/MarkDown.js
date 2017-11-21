@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
 import '../../stylesheets/markdown.less';
+
+import React, { Component } from 'react';
 import showdown from 'showdown';
 
 const converter = new showdown.Converter();
