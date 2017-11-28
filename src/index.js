@@ -7,3 +7,4 @@ import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();
+console.log('欢迎提PR：https://github.com/JoJoChilly/joexp-react');
