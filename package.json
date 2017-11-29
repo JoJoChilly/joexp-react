@@ -8,7 +8,8 @@
     "build-prev-dev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress",
     "build": "./node_modules/.bin/webpack --config scripts/webpack.prod.js --progress",
     "redev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
-    "dev": "pm2 start ./bin/www & ./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w"
+    "dev": "pm2 start ./bin/www & ./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
+    "makeblg": "./node_modules/.bin/showdown makehtml -i blogs/new.md -o blogs/output.html --noHeaderId && node ./bin/readFile.js"
   },
   "dependencies": {
     "autoprefixer": "7.1.2",
@@ -64,7 +65,7 @@
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.72.0",
     "sequelize": "^4.22.6",
-    "serve-favicon": "~2.4.5",
+    "serve-favicon": "^2.4.5",
     "showdown": "^1.8.2",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",

@@ -3,7 +3,7 @@ import '../../stylesheets/markdown.less';
 import React, { Component } from 'react';
 import showdown from 'showdown';
 
-const converter = new showdown.Converter();
+const converter = new showdown.Converter({ noHeaderId: true });
 
 class MarkDown extends Component {
     constructor(props) {
