@@ -9,7 +9,7 @@ import MarkDown from '../views/MarkDown';
 
 const routes = [
     {
-        path: '/home ',
+        path: '/home',
         component: Home,
     },
     {

@@ -54,6 +54,14 @@ class App extends Component {
                         >
                             MarkDown转换器
                         </Item>
+                        <a
+                            className="item"
+                            href="http://xianbai.me/learn-md/article/about/readme.html"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            MarkDown入门参考
+                        </a>
                         <Tick />
                     </Menu>
                     <RouteConfig />

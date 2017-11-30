@@ -8,7 +8,7 @@
     "build-prev-dev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress",
     "build": "./node_modules/.bin/webpack --config scripts/webpack.prod.js --progress",
     "redev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
-    "dev": "pm2 start ./bin/www & ./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
+    "dev": "pm2 start ./bin/www --watch & ./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
     "makeblg": "./node_modules/.bin/showdown makehtml -i blogs/new.md -o blogs/output.html --noHeaderId && node ./bin/readFile.js"
   },
   "dependencies": {
