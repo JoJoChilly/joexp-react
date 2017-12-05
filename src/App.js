@@ -54,6 +54,16 @@ class App extends Component {
                         >
                             MarkDown转换器
                         </Item>
+
+                        <a
+                            className="item"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            href="https://www.google.com/logos/2017/logo17/logo17.html?hl=zh_CN"
+                        >
+                            程序员启蒙小游戏——帮助孩子学习程序思维
+                        </a>
+
                         <a
                             className="item"
                             href="http://xianbai.me/learn-md/article/about/readme.html"
