@@ -1,15 +1,29 @@
-<h1>增加博客查询功能</h1>
+<h1>解决 iOS 设备上的 Audio 不能连续播放问题</h1>
 <hr />
-<h4>从此可以查看博客内容。</h4>
-<h5>相关notes</h5>
-<p>新建字段<br />
-alter table blogs add isDeleted varchar(255);</p>
-<p>修改字段类型<br />
-alter table blogs modify column isDeleted tinyint(1);  </p>
-<p>查看表结构
-describe blogs;</p>
-<p>选择数据库<br />
-use joexp;</p>
-<p>修改字段默认值<br />
-alter table blogs alter column isDeleted set default 0;</p>
-<p>源码传送门： <a href="https://github.com/JoJoChilly/joexp-react">Github</a></p>
+<h3>遇到了什么问题？</h3>
+<p>有一个需求，需要在一个 Audio 播放完后，继续播放下一个 Audio，类似实现一个音频播放列表。发现
+audio[0].play() 正常 work，但是 audio[1].play() 在 iOS 设备上不会被执行。</p>
+<hr />
+<h3>为什么会发生这个问题？</h3>
+<p>iOS 做了多媒体优化，控制不能 play 多个 Audio。</p>
+<hr />
+<h3>如何解决这个问题？</h3>
+<p>通过将 audio 节点的 src 重新赋值，来实现 Audio 的连续播放。</p>
+<pre><code>// audio是我的React refs
+// &lt;audio
+//     src={src[0]}
+//     hidden
+//     ref={e =&gt; {
+//         this.audio = e;
+//     }}
+// /&gt;
+audio.play();// 第一个音频
+audio.addEventListener('ended', () =&gt; handleAudioEnd());
+
+handleAudioEnd() {
+    audio.src = '...';
+    audio.load();
+    audio.play();
+}
+</code></pre>
+<h3>前端不易，且行且珍惜。</h3>

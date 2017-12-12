@@ -1,23 +1,39 @@
-# 增加博客查询功能
+# 解决 iOS 设备上的 Audio 不能连续播放问题
 
-----
-#### 从此可以查看博客内容。
+---
 
-#####相关notes
+### 遇到了什么问题？
 
-新建字段  
-alter table blogs add isDeleted varchar(255);
+有一个需求，需要在一个 Audio 播放完后，继续播放下一个 Audio，类似实现一个音频播放列表。发现
+audio[0].play() 正常 work，但是 audio[1].play() 在 iOS 设备上不会被执行。
 
-修改字段类型  
-alter table blogs modify column isDeleted tinyint(1);  
+---
 
-查看表结构
-describe blogs;
+### 为什么会发生这个问题？
 
-选择数据库  
-use joexp;
+iOS 做了多媒体优化，控制不能 play 多个 Audio。
 
-修改字段默认值  
-alter table blogs alter column isDeleted set default 0;
+---
 
-源码传送门： [Github](https://github.com/JoJoChilly/joexp-react)
+### 如何解决这个问题？
+
+通过将 audio 节点的 src 重新赋值，来实现 Audio 的连续播放。
+
+    // audio是我的React refs
+    // <audio
+    //     src={src[0]}
+    //     hidden
+    //     ref={e => {
+    //         this.audio = e;
+    //     }}
+    // />
+    audio.play();// 第一个音频
+    audio.addEventListener('ended', () => handleAudioEnd());
+
+    handleAudioEnd() {
+        audio.src = '...';
+        audio.load();
+        audio.play();
+    }
+
+### 前端不易，且行且珍惜。
