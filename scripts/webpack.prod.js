@@ -9,19 +9,20 @@ process.on('unhandledRejection', err => {
     throw err;
 });
 
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const path = require('path');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // TODO: when production
 //
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const extractLess = new ExtractTextPlugin({
     filename: '[name].css',
 });
-
 const config = merge(common, {
     module: {
         rules: [
@@ -46,20 +47,7 @@ const config = merge(common, {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: [
-                    'react-hot-loader',
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            cacheDirectory: true,
-                            presets: ['env'],
-                            plugins: [
-                                'transform-runtime',
-                                'transform-class-properties',
-                            ],
-                        },
-                    },
-                ],
+                use: 'babel-loader',
             },
             {
                 test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
@@ -67,8 +55,7 @@ const config = merge(common, {
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader:
-                    'url-loader?limit=10000&mimetype=application/fontwoff&name=[name].[ext]',
+                loader: 'url-loader?limit=10000&mimetype=application/fontwoff&name=[name].[ext]',
             },
         ],
     },
@@ -76,6 +63,11 @@ const config = merge(common, {
         extractLess,
         new UglifyJSPlugin({
             sourceMap: true,
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production'),
+            },
         }),
     ],
 });
