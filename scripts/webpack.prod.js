@@ -16,8 +16,6 @@ const common = require('./webpack.common.js');
 // const path = require('path');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-// TODO: when production
-//
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractLess = new ExtractTextPlugin({
