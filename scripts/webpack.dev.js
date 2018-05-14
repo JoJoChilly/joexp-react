@@ -12,8 +12,8 @@ process.on('unhandledRejection', err => {
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const path = require('path');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = merge(common, {
@@ -58,10 +58,7 @@ module.exports = merge(common, {
                         options: {
                             cacheDirectory: true,
                             presets: ['env'],
-                            plugins: [
-                                'transform-runtime',
-                                'transform-class-properties',
-                            ],
+                            plugins: ['transform-runtime', 'transform-class-properties'],
                         },
                     },
                 ],
@@ -73,8 +70,7 @@ module.exports = merge(common, {
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader:
-                    'url-loader?limit=10000&mimetype=application/fontwoff&name=[name].[ext]',
+                loader: 'url-loader?limit=10000&mimetype=application/fontwoff&name=[name].[ext]',
             },
         ],
     },
