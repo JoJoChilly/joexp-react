@@ -23,14 +23,6 @@ export default class Home extends Component {
                     blogs,
                 });
             });
-        // fetch('/api/getBlogs', {
-        //     method: 'GET',
-        // }).then(blogs => {
-        //     console.log(blogs.blob());
-        //     this.setState({
-        //         blogs,
-        //     });
-        // });
     }
 
     render() {
@@ -38,11 +30,7 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="App-header">
-                    <img
-                        src="../images/logo.svg"
-                        className="App-logo"
-                        alt="logo"
-                    />
+                    <img src="../images/logo.svg" className="App-logo" alt="logo" />
                     <h2>Welcome to JoExp</h2>
                 </div>
                 <div className="app-content">

@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const { ReactLoadablePlugin } = require('react-loadable/webpack');
 
 module.exports = {
     entry: {
@@ -14,11 +15,22 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Production',
         }),
+        // new ReactLoadablePlugin({
+        //     filename: './dist/react-loadable.json',
+        // }),
     ],
     output: {
         path: path.resolve('./public/dist'),
         filename: '[name].bundle.js',
-        publicPath: './',
+        publicPath: './dist/',
         // path: path.resolve(__dirname, 'public/dist'),
+    },
+    resolve: {
+        extensions: ['.js'],
+        alias: {
+            '@': path.resolve('src'),
+            '@stylesheets': path.resolve('stylesheets'),
+        },
+        symlinks: false,
     },
 };

@@ -1,5 +1,4 @@
-import '../../stylesheets/markdown.less';
-
+import '@stylesheets/markdown.less';
 import React, { Component } from 'react';
 import showdown from 'showdown';
 
