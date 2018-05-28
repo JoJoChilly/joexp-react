@@ -45,10 +45,17 @@ const config = merge(common, {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'react'],
+                        plugins: ['transform-runtime', 'transform-class-properties'],
+                    },
+                },
             },
             {
                 test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
@@ -65,7 +72,6 @@ const config = merge(common, {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: '[name].css',
-            chunkFilename: '[id].css',
         }),
         // new webpack.optimize.UglifyJsPlugin({
         //     compress: {

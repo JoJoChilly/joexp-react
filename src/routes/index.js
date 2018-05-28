@@ -42,9 +42,7 @@ const RouteConfig = () => (
     <Router>
         <div>
             <Route exact path="/" component={Home} />
-            {routes.map(route => (
-                <RouteWithSubRoutes key={route.path} {...route} />
-            ))}
+            {routes.map(route => <RouteWithSubRoutes key={route.path} {...route} />)}
         </div>
     </Router>
 );

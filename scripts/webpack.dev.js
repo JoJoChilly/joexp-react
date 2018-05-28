@@ -55,11 +55,6 @@ module.exports = merge(common, {
                     'react-hot-loader',
                     {
                         loader: 'babel-loader',
-                        options: {
-                            cacheDirectory: true,
-                            presets: ['env'],
-                            plugins: ['transform-runtime', 'transform-class-properties'],
-                        },
                     },
                 ],
             },
