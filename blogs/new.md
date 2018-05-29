@@ -1,39 +1,13 @@
-# 解决 iOS 设备上的 Audio 不能连续播放问题
+# 汇报一下最近的一些工作
 
----
+很久没有维护这个网站，是因为最近的确做了一些大的更新。
 
-### 遇到了什么问题？
+首先是更新了 Webpack，使用了最新的 Webpack 4。 因此不得不更新了许许多多的 plugin，并 update 了一些写法。其实还想更新 react 16，但是最近工作原因，比较忙，反正找个借口，大家姑且信了吧。
 
-有一个需求，需要在一个 Audio 播放完后，继续播放下一个 Audio，类似实现一个音频播放列表。发现
-audio[0].play() 正常 work，但是 audio[1].play() 在 iOS 设备上不会被执行。
+然后是用了一个很赞的 dynamic import 的库，叫做 react-loadable。不得不说这是个非常优秀的库，我的主文件的大小从 1.09Mb 变成了 1Mb，并且会按照页面动态加载 js 文件，个人感觉体验非常的好，非常流畅非常顺滑，飞一样的感觉。
 
----
+值得一提的是， 现在的主 js 的大小仍然很大，高达 1Mb，这是一个很大的优化点，后续也会继续找办法优化的。按照的是传统的 Webpack 打包方式，不知道为什么会如此之大。也欢迎大家访问我的 github 链接[https://github.com/JoJoChilly/joexp-react](https://github.com/JoJoChilly/joexp-react)帮忙看一下到底是什么原因。我会非常感激的。
 
-### 为什么会发生这个问题？
+以上就是我最近的工作，后续考虑加一个回复功能，给大家一点互动的机会，也给我一个学习读写数据库的机会。
 
-iOS 做了多媒体优化，控制不能 play 多个 Audio。
-
----
-
-### 如何解决这个问题？
-
-通过将 audio 节点的 src 重新赋值，来实现 Audio 的连续播放。
-
-    // audio是我的React refs
-    // <audio
-    //     src={src[0]}
-    //     hidden
-    //     ref={e => {
-    //         this.audio = e;
-    //     }}
-    // />
-    audio.play();// 第一个音频
-    audio.addEventListener('ended', () => handleAudioEnd());
-
-    handleAudioEnd() {
-        audio.src = '...';
-        audio.load();
-        audio.play();
-    }
-
-### 前端不易，且行且珍惜。
+感谢阅读。
