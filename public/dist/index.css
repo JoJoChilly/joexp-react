@@ -135,10 +135,11 @@ table {
   padding: 30px 0;
 }
 .app-content > ul li {
-  padding: 20px 0;
+  padding: 20px;
   border: 1px solid #ddd;
   box-shadow: none;
-  transition: all .25s;
+  transition: all 0.25s;
+  margin-bottom: 20px;
 }
 .app-content > ul li:hover {
   box-shadow: 0 0 10px #ccc;
@@ -149,7 +150,14 @@ table {
 }
 .app-content > ul li .blog-publish-time {
   font-size: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+}
+.app-content > ul li .blog-content {
+  text-align: left;
+  text-indent: 2em;
+}
+.app-content > ul li p {
+  margin: 10px 0;
 }
 .app-content > ul li hr {
   display: none;
@@ -159,8 +167,7 @@ table {
 .app-content > ul li h3,
 .app-content > ul li h4,
 .app-content > ul li h5,
-.app-content > ul li h6,
-.app-content > ul li p {
+.app-content > ul li h6 {
   margin: 0;
 }
 
