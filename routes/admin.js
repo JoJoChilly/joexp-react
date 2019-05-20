@@ -1,9 +1,11 @@
 const express = require('express');
 
 const router = express.Router();
-router.get('/admin', (req, res) => {
+router.get('/', (req, res) => {
     res.render('/admin/index');
 });
-router.get('/admin/login', (req, res) => {
+router.get('/login', (req, res) => {
     res.render('/admin/login');
 });
+
+module.exports = router;

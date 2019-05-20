@@ -34,24 +34,18 @@ export default class Home extends Component {
                     <h2>Welcome to JoExp</h2>
                 </div>
                 <div className="app-content">
-                    {
-                        <ul>
-                            {blogs.map(el => (
-                                <li>
-                                    <div className="blog-title">{el.title}</div>
-                                    <div className="blog-publish-time">
-                                        发布时间：{el.publishTime}
-                                    </div>
-                                    <div
-                                        className="blog-content"
-                                        dangerouslySetInnerHTML={{
-                                            __html: el.content,
-                                        }}
-                                    />
-                                </li>
-                            ))}
-                        </ul>
-                    }
+                    {blogs.map(el => (
+                        <div className="article">
+                            <div className="blog-title">{el.title}</div>
+                            <div className="blog-publish-time">发布时间：{el.publishTime}</div>
+                            <div
+                                className="blog-content"
+                                dangerouslySetInnerHTML={{
+                                    __html: el.content,
+                                }}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         );
