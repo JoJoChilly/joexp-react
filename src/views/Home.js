@@ -29,9 +29,10 @@ export default class Home extends Component {
         const { blogs } = this.state;
         return (
             <div>
-                <div className="App-header">
-                    <img src="../images/logo.svg" className="App-logo" alt="logo" />
+                <div className="app-header">
+                    <img src="/images/roman-manukyan-saaNngBhuBw-unsplash.jpg" className="banner" alt="banner" />
                     <h2>Welcome to JoExp</h2>
+                    <div className="copyright">Photo by roman manukyan on Unsplash</div>
                 </div>
                 <div className="app-content">
                     {blogs.map(el => (

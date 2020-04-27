@@ -14,8 +14,6 @@ router.get('/getBlogs', (req, res) => {
             },
         },
     }).then(blogs => {
-        console.log(blogs);
-
         res.send(blogs);
     });
 });

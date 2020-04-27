@@ -3,8 +3,6 @@ import { Menu } from 'semantic-ui-react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import RouteConfig from './routes';
-import Tick from './components/Tick';
-import './App.css';
 
 const Item = Menu.Item;
 
@@ -72,7 +70,6 @@ class App extends Component {
                         >
                             MarkDown入门参考
                         </a>
-                        <Tick />
                     </Menu>
                     <RouteConfig />
                 </div>
