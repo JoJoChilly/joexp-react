@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= '我们结婚啦！'
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6.7.1/swiper-bundle.min.css">
+    link(rel='stylesheet', href='/stylesheets/merryme.css')
+  body
+    block content
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
+            
+            <div class="swiper-button-next shakeY"></div>
+            
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    <script src="https://unpkg.com/swiper@6.7.1/swiper-bundle.min.js"> </script>
+    if env == 'production'
+      script(src="https://tajs.qq.com/stats?sId=65868987", charset="UTF-8")
+    
+    <script src="/javascripts/merryme.js"> </script>

@@ -1,0 +1,59 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.swiper-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.swiper-wrapper {
+    display: block;
+}
+
+.swiper-slide {
+    background-color: rgb(0, 174, 255);
+}
+.swiper-button-next {
+    color: aliceblue;
+    transform: rotate(90deg);
+    bottom: 30px;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+@keyframes shakeY {
+    from,
+    to {
+        transform: translate3d(0, 0, 0) rotate(90deg);
+        opacity: 0.8;
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(0, -10px, 0) rotate(90deg);
+        opacity: 0.6;
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(0, 10px, 0) rotate(90deg);
+        opacity: 1;
+    }
+}
+
+.shakeY {
+    animation-name: shakeY;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}

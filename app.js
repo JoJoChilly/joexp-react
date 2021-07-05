@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const api = require('./routes/api');
 const admin = require('./routes/admin');
+const merryme = require('./routes/merryme');
 // const users = require('./routes/users');
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', admin);
 app.use('/api', api);
+app.use('/merryme', merryme);
 app.use('/', index);
 // app.use('/users', users);
 
