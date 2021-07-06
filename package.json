@@ -4,7 +4,9 @@
     "private": true,
     "scripts": {
         "start": "pm2 start ./bin/www",
+        "start-server": "pm2 start ./bin/www --interpreter=/root/.nvm/versions/node/v12.16.1/bin/node",
         "restart": "pm2 restart ./bin/www",
+        "restart-server": "pm2 restart ./bin/www --interpreter=/root/.nvm/versions/node/v12.16.1/bin/node",
         "build-dev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress",
         "build": "./node_modules/.bin/webpack --config scripts/webpack.prod.js --mode production --progress",
         "redev": "./node_modules/.bin/webpack --config scripts/webpack.dev.js --progress -w",
